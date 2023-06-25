@@ -31,18 +31,21 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
+    //template_3oris9f
+    //service_yeboead
+    //czZkbmmcSl57GJ_Fe
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        'service_yeboead',
+        'template_3oris9f',
         {
           from_name: form.name,
-          to_name: "JavaScript Mastery",
+          to_name: "Ahmed Abdelmageed",
           from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
+          to_email: "ahmedabdelmageed121@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        'czZkbmmcSl57GJ_Fe'
       )
       .then(
         () => {
