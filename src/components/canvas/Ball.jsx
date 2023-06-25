@@ -44,10 +44,10 @@ const BallCanvas = ({ icon }) => {
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
     >
-      {/* <Suspense fallback={<CanvasLoader />}>
+      <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
-      </Suspense> */}
+      </Suspense>
 
       <Preload all />
     </Canvas>
