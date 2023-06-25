@@ -58,7 +58,7 @@ const Contact = () => {
           setLoading(false);
           console.error(error);
 
-          alert("Ahh, something went wrong. Please try again.");
+          alert("something went wrong. Please try again.");
         }
       );
   };
