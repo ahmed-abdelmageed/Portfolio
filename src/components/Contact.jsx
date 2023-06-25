@@ -30,10 +30,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
-    //template_3oris9f
-    //service_yeboead
-    //czZkbmmcSl57GJ_Fe
     emailjs
       .send(
         'service_yeboead',
