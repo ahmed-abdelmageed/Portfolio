@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "homepage": "",
+  "PUBLIC_URL": "https://portfolio-lemon-alpha-40.vercel.app/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
