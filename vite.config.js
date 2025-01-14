@@ -1,13 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import legacy from '@vitejs/plugin-legacy'
+import legacy from '@vitejs/plugin-legacy';
+import browserslist from 'browserslist';
 
-// https://vitejs.dev/config/
-export default defineConfig({
+export default {
   plugins: [
-    react(),
     legacy({
-      targets: ['defaults', 'not IE 11'],
-    }),
-  ],
-})
+      targets: browserslist.loadConfig({}) || ['defaults']
+    })
+  ]
+};
