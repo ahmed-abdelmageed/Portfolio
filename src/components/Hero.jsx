@@ -11,7 +11,6 @@ const Hero = () => {
     script.type = "module";
     document.head.appendChild(script);
     
-    // Clean up the script tag when the component is unmounted
     return () => {
       document.head.removeChild(script);
     };
@@ -35,12 +34,12 @@ const Hero = () => {
       </div>
 
       {/* Embed updated Lottie animation */}
-      <div className="absolute inset-0 flex justify-center items-center mt-8">
+      <div className="absolute inset-0 flex justify-center items-center mt-14">
         <dotlottie-player 
           src="https://lottie.host/29029fec-84e6-4d0e-be72-9108dbad6302/OuUIu8L0yh.lottie" 
           background="transparent" 
           speed="1" 
-          style={{ width: '950px', height: '950px' }} 
+          style={{ width: '550px', height: '550px' , marginTop:"165px" }} 
           loop 
           autoplay
         />
