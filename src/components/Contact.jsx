@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
@@ -63,10 +63,21 @@ const Contact = () => {
       );
   };
 
+  useEffect(() => {
+    // Dynamically load the Lottie player script if it's not already available
+    const script = document.createElement('script');
+    script.src = "https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs";
+    script.type = "module";
+    document.head.appendChild(script);
+    
+    // Clean up the script tag when the component is unmounted
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
-    <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
-    >
+    <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
@@ -123,9 +134,17 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 l:h-auto md:h-[550px] h-[450px]'
+        className='xl:flex-1 flex justify-center items-center' // Center the Lottie on the right
       >
-        <EarthCanvas />
+        {/* Use the Lottie animation here */}
+        <dotlottie-player
+          src="https://lottie.host/a3767ae9-3761-4b08-8c89-f6c8e375e002/i4dJ7GpHMn.lottie"
+          background="transparent"
+          speed="1"
+          style={{ width: '300px', height: '300px' }}
+          loop
+          autoplay
+        />
       </motion.div>
     </div>
   );
