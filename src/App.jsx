@@ -18,7 +18,6 @@ const App = () => {
         <Tech />
         <Works />
         <div className="relative z-0">
-          {/* Conditionally render StarsCanvas based on WebGL support */}
           {isWebGLSupported ? (
             <>
               {/* Uncomment this line when ready */}
