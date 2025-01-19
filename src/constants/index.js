@@ -246,7 +246,7 @@ const projects = [
       },
     ],
     image: treemix1,
-    additional_images: [treemix1, treemix2],
+    // additional_images: [treemix1, treemix2],
   },
   {
     name: "Master Travel Dashboard (CRM)",
@@ -259,7 +259,7 @@ const projects = [
       },
     ],
     image: travel1,
-    additional_images: [travel1, travel2, travel3, travel4],
+    // additional_images: [travel1, travel2, travel3, travel4],
   },
   {
     name: "Halalak Dashboard",
@@ -272,7 +272,7 @@ const projects = [
       },
     ],
     image: halalak5,
-    additional_images: [halalak5, halalak1, halalak2, halala4],
+    // additional_images: [halalak5, halalak1, halalak2, halala4],
   },
   {
     name: "Inventory POS System",
@@ -285,7 +285,7 @@ const projects = [
       },
     ],
     image: invintory,
-    additional_images: [invintory, inventory2],
+    // additional_images: [invintory, inventory2],
   },
   {
     name: "Milano Art Studio",
