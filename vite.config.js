@@ -5,13 +5,7 @@ export default defineConfig({
   plugins: [
     react(),
     legacy({
-      targets: ["defaults", "not IE 11", "ios >= 10"],
+      targets: ["defaults", "not IE 11"],
     }),
   ],
-  build: {
-    target: "es2015",
-  },
-  optimizeDeps: {
-    include: ["swiper"],
-  },
 });
