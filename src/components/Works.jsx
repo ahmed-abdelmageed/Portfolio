@@ -5,14 +5,6 @@ import { motion } from "framer-motion";
 import { projects } from "../constants";
 import { github, browser, imagesIcon } from "../assets"; // Import the images icon
 import { SectionWrapper } from "../hoc";
-import { Tilt } from "react-tilt";
-
-// Import Swiper and its modules
-// import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules"; // Import modules correctly for Swiper v8+
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
 
 // Modal component
 const Modal = ({ onClose, additional_images }) => {
@@ -26,24 +18,14 @@ const Modal = ({ onClose, additional_images }) => {
           &times;
         </button>
         <div className="mt-5">
-          {/* <Swiper
-            modules={[Navigation, Pagination]}
-            navigation
-            pagination={{ clickable: true }}
-            spaceBetween={10}
-            slidesPerView={1}
-            className="w-full "
-          >
-            {additional_images.map((img, idx) => (
-              <SwiperSlide key={idx}>
-                <img
-                  src={img}
-                  alt={`additional_image_${idx}`}
-                  className="w-full h-auto rounded-lg object-cover px-12"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper> */}
+          {additional_images.map((img, idx) => (
+            <img
+              key={idx}
+              src={img}
+              alt={`additional_image_${idx}`}
+              className="w-full h-auto rounded-lg object-cover mb-4"
+            />
+          ))}
         </div>
       </div>
     </div>
@@ -68,89 +50,79 @@ const ProjectCard = ({
 
   return (
     <>
-      <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-        <Tilt
-          options={{
-            max: 45,
-            scale: 1,
-            speed: 450,
-          }}
-          className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[500px] flex flex-col justify-between"
-        >
-          <div>
-            <div className="relative w-full h-[230px]">
-              <img
-                src={image}
-                alt="project_image"
-                className="w-full h-full object-cover rounded-2xl"
-              />
-              <div className="absolute inset-0 flex gap-1 justify-end m-3 card-img_hover">
-                {source_code_link && (
-                  <div
-                    onClick={() => window.open(source_code_link, "_blank")}
-                    className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-                  >
-                    <img
-                      src={github}
-                      alt="source code"
-                      className="w-1/2 h-1/2 object-contain"
-                    />
-                  </div>
-                )}
-                {website_link && (
-                  <div
-                    onClick={() => window.open(website_link, "_blank")}
-                    className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-                  >
-                    <img
-                      src={browser}
-                      alt="live demo"
-                      className="w-1/2 h-1/2 object-contain"
-                    />
-                  </div>
-                )}
-                {additional_images && additional_images.length > 0 && (
-                  <div
-                    onClick={openModal}
-                    className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-                  >
-                    <img
-                      src={imagesIcon}
-                      alt="images"
-                      className="w-1/2 h-1/2 object-contain"
-                    />
-                  </div>
-                )}
-              </div>
-            </div>
-
-            <div className="mt-5 flex-grow">
-              <h3 className="text-white font-bold text-[24px]">{name}</h3>
-              <p className="mt-2 text-secondary text-[14px]">{description}</p>
-            </div>
-          </div>
-
-          <div className="mt-4 flex flex-wrap gap-2 min-h-[24px]">
-            {tags && tags.length > 0 ? (
-              tags.map((tag) => (
-                <p
-                  key={`${name}-${tag.name}`}
-                  className={`text-[14px] ${tag.color}`}
+      <motion.div
+        variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+        className="bg-tertiary p-5 rounded-lg shadow-md w-full max-w-[360px] flex flex-col justify-between"
+      >
+        <div>
+          <div className="relative w-full h-[200px]">
+            <img
+              src={image}
+              alt="project_image"
+              className="w-full h-full object-cover rounded-lg"
+            />
+            <div className="absolute inset-0 flex gap-1 justify-end m-3">
+              {source_code_link && (
+                <div
+                  onClick={() => window.open(source_code_link, "_blank")}
+                  className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
                 >
-                  {tag.name}
-                </p>
-              ))
-            ) : (
-              <p className="text-[14px] text-transparent">#Placeholder</p>
-            )}
+                  <img
+                    src={github}
+                    alt="source code"
+                    className="w-1/2 h-1/2 object-contain"
+                  />
+                </div>
+              )}
+              {website_link && (
+                <div
+                  onClick={() => window.open(website_link, "_blank")}
+                  className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                >
+                  <img
+                    src={browser}
+                    alt="live demo"
+                    className="w-1/2 h-1/2 object-contain"
+                  />
+                </div>
+              )}
+              {additional_images && additional_images.length > 0 && (
+                <div
+                  onClick={openModal}
+                  className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                >
+                  <img
+                    src={imagesIcon}
+                    alt="images"
+                    className="w-1/2 h-1/2 object-contain"
+                  />
+                </div>
+              )}
+            </div>
           </div>
-        </Tilt>
+
+          <div className="mt-4">
+            <h3 className="text-white font-bold text-[20px]">{name}</h3>
+            <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          </div>
+        </div>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {tags?.map((tag) => (
+            <span
+              key={`${name}-${tag.name}`}
+              className={`text-[12px] px-2 py-1 bg-gray-700 text-white rounded-lg`}
+            >
+              {tag.name}
+            </span>
+          ))}
+        </div>
       </motion.div>
 
       {/* Modal for displaying additional images */}
-      {/* {isModalOpen && (
+      {isModalOpen && (
         <Modal onClose={closeModal} additional_images={additional_images} />
-      )} */}
+      )}
     </>
   );
 };
@@ -158,27 +130,25 @@ const ProjectCard = ({
 // Works component
 const Works = () => {
   return (
-    <>
+    <div>
       <motion.div variants={textVariant()}>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <h2 className={`${styles.sectionHeadText}`}>Projects</h2>
       </motion.div>
 
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
-        >
-          This is my projects. Each project is briefly described with links to
-          code repositories and live demos in it.
-        </motion.p>
-      </div>
+      <motion.p
+        variants={fadeIn("", "", 0.1, 1)}
+        className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+      >
+        Here are some of my projects, briefly described with links to code
+        repositories and live demos.
+      </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
