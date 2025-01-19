@@ -29,8 +29,28 @@ import {
   formik,
   shoopy,
   shoopy2,
+  shoopy1,
   looky,
-  youtube
+  youtube,
+  purelife,
+  milano,
+  halalak,
+  mc,
+  halalak5,
+  halalak1,
+  halalak2,
+  halala4,
+  invintory,
+  inventory2,
+  treemix1,
+  treemix2,
+  travel1,
+  travel2,
+  travel3,
+  travel4,
+  safa,
+  next,
+  MV
 } from "../assets";
 
 export const navLinks = [
@@ -82,6 +102,10 @@ const technologies = [
     icon: reactjs,
   },
   {
+    name: "Next",
+    icon: next,
+  },
+  {
     name: "Redux Toolkit",
     icon: redux,
   },
@@ -118,10 +142,33 @@ const technologies = [
     name: "Storybook ",
     icon: storybook,
   },
-
 ];
 
 const experiences = [
+  {
+    title: "React.js Developer",
+    company_name: "Master Vision",
+    icon: MV,
+    iconBg: "#383E56",
+    date: "Apr 2023 - Jun 2024",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+    ],
+  },
+  {
+    title: "React.js Developer",
+    company_name: "Multi Choice",
+    icon: mc,
+    iconBg: "#383E56",
+    date: "Apr 2023 - Jun 2024",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+    ],
+  },
   {
     title: "React.js Developer",
     company_name: "MVP Solutions",
@@ -142,11 +189,9 @@ const experiences = [
     date: "Dec 2021 - Present",
     points: [
       "creating engaging lesson plans ",
-      "mentoring students to achieve their programming goals."
-
+      "mentoring students to achieve their programming goals.",
     ],
   },
-
 ];
 
 const testimonials = [
@@ -178,19 +223,92 @@ const testimonials = [
 
 const projects = [
   {
-    name: "E-commerce (Shoopy)",
+    name: "Pure Life",
     description:
-      "e-commerce website built with React framework Using TypeScript,  React bootstrap, react router dom, Formik, yup, axios, slickcarousel, reactslick, lottie files.",
+      "Created a website for import and export services, showcasing products and services with detailed descriptions",
     tags: [
-
       {
         name: "React.JS",
         color: "pink-text-gradient",
       },
     ],
-    image: shoopy2,
-    source_code_link: "https://github.com/ahmed-abdelmageed/e-commerce",
-    website_link: "https://e-commerce-one-silk.vercel.app/"
+    image: purelife,
+    website_link: "https://www.purelife-eg.net/",
+  },
+  {
+    name: "Tree Mix Dashboard",
+    description:
+      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+    tags: [
+      {
+        name: "React.JS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: treemix1,
+    additional_images: [treemix1, treemix2],
+  },
+  {
+    name: "Master Travel Dashboard (CRM)",
+    description:
+      "Developed a React-based travel management system with booking, logistics, accounting, and admin controls, featuring real-time updates and master data management.",
+    tags: [
+      {
+        name: "React.JS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: travel1,
+    additional_images: [travel1, travel2, travel3, travel4],
+  },
+  {
+    name: "Halalak Dashboard",
+    description:
+      "Developed a React-based admin dashboard for the Halalak app , managing product data, user accounts, notifications, app settings, and admin roles.",
+    tags: [
+      {
+        name: "React.JS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: halalak5,
+    additional_images: [halalak5, halalak1, halalak2, halala4],
+  },
+  {
+    name: "Inventory POS System",
+    description:
+      " Developed a React-based POS system with user management, transaction tracking, money transfers, and admin role-based access control.",
+    tags: [
+      {
+        name: "React.JS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: invintory,
+    additional_images: [invintory, inventory2],
+  },
+  {
+    name: "Milano Art Studio",
+    description:
+      "-Developed a website for Milano Art Gallery, showcasing all art exhibits, services, and products with detailed information and visuals.",
+    tags: [
+      {
+        color: "pink-text-gradient",
+      },
+    ],
+    image: milano,
+    website_link: "https://milanoartstudio.com/",
+  },
+  {
+    name: "Safa Tours",
+    description: "Developed a website for Safa travelling company.",
+    tags: [
+      {
+        color: "pink-text-gradient",
+      },
+    ],
+    image:safa ,
+    website_link: "https://demo.safatours.com/",
   },
   {
     name: "Youtube Clone",
@@ -204,22 +322,20 @@ const projects = [
     ],
     image: youtube,
     source_code_link: "https://github.com/ahmed-abdelmageed/youtube-react",
-    website_link: "https://youtube-react-mu.vercel.app/"
-
+    website_link: "https://youtube-react-mu.vercel.app/",
   },
   {
-    name: "Movies (Looky)",
+    name: "E-commerce (Shoopy)",
     description:
-      "Movies website using react cli, react router dom, useContext, useNavigate, useEffect, useState, axios,- formik , yup , bootstrap , react,bootstrap, lottie files",
+      "e-commerce website built with React framework Using TypeScript, tailwind, react router dom, Formik, yup, axios, slickcarousel, reactslick, lottie files.",
     tags: [
       {
         name: "React.JS",
         color: "pink-text-gradient",
       },
     ],
-    image: looky,
-    source_code_link: "https://github.com/ahmed-abdelmageed/my-app",
-    website_link: "https://moviesangular-gm7y.vercel.app/"
+    image: shoopy1,
+    website_link: "https://ecommerce-three-sooty-79.vercel.app/",
   },
 ];
 
