@@ -69,15 +69,9 @@ const ProjectCard = ({
   return (
     <>
       <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-        <Tilt
-          options={{
-            max: 45,
-            scale: 1,
-            speed: 450,
-          }}
-          className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[500px] flex flex-col justify-between"
-        >
-          <div>
+     
+          <div           className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[500px] flex flex-col justify-between"
+          >
             <div className="relative w-full h-[230px]">
               <img
                 src={image}
@@ -128,8 +122,6 @@ const ProjectCard = ({
               <h3 className="text-white font-bold text-[24px]">{name}</h3>
               <p className="mt-2 text-secondary text-[14px]">{description}</p>
             </div>
-          </div>
-
           <div className="mt-4 flex flex-wrap gap-2 min-h-[24px]">
             {tags && tags.length > 0 ? (
               tags.map((tag) => (
@@ -144,7 +136,8 @@ const ProjectCard = ({
               <p className="text-[14px] text-transparent">#Placeholder</p>
             )}
           </div>
-        </Tilt>
+          </div>
+
       </motion.div>
 
       {/* Modal for displaying additional images */}
