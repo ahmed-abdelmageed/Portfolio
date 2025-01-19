@@ -1,10 +1,15 @@
-import { defineConfig } from "vite";
+import legacy from "@vitejs/plugin-legacy";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    legacy({
+      targets: ["defaults", "not IE 11", "ios >= 10"],
+    }),
+  ],
   build: {
-    target: "es2017",
+    target: "es2015",
   },
   optimizeDeps: {
     include: ["swiper"],
