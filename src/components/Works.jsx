@@ -8,11 +8,11 @@ import { SectionWrapper } from "../hoc";
 import { Tilt } from "react-tilt";
 
 // Import Swiper and its modules
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules"; // Import modules correctly for Swiper v8+
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
 
 // Modal component
 const Modal = ({ onClose, additional_images }) => {
@@ -26,7 +26,7 @@ const Modal = ({ onClose, additional_images }) => {
           &times;
         </button>
         <div className="mt-5">
-          <Swiper
+          {/* <Swiper
             modules={[Navigation, Pagination]}
             navigation
             pagination={{ clickable: true }}
@@ -43,7 +43,7 @@ const Modal = ({ onClose, additional_images }) => {
                 />
               </SwiperSlide>
             ))}
-          </Swiper>
+          </Swiper> */}
         </div>
       </div>
     </div>
@@ -148,9 +148,9 @@ const ProjectCard = ({
       </motion.div>
 
       {/* Modal for displaying additional images */}
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <Modal onClose={closeModal} additional_images={additional_images} />
-      )}
+      )} */}
     </>
   );
 };
