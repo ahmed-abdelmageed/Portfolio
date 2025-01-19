@@ -27,12 +27,11 @@ const Modal = ({ onClose, additional_images }) => {
         </button>
         <div className="mt-5">
           <Swiper
-            modules={[Navigation, Pagination]} 
+            modules={[Navigation, Pagination]}
             navigation
             pagination={{ clickable: true }}
             spaceBetween={10}
             slidesPerView={1}
-            
             className="w-full "
           >
             {additional_images.map((img, idx) => (
@@ -70,86 +69,87 @@ const ProjectCard = ({
   return (
     <>
       <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-  options={{
-    max: 45,
-    scale: 1,
-    speed: 450,
-  }}
-  className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[500px] flex flex-col justify-between"
->
-  <div>
-    <div className="relative w-full h-[230px]">
-      <img
-        src={image}
-        alt="project_image"
-        className="w-full h-full object-cover rounded-2xl"
-      />
-      <div className="absolute inset-0 flex gap-1 justify-end m-3 card-img_hover">
-        {source_code_link && (
-          <div
-            onClick={() => window.open(source_code_link, "_blank")}
-            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-          >
-            <img
-              src={github}
-              alt="source code"
-              className="w-1/2 h-1/2 object-contain"
-            />
+        <Tilt
+          options={{
+            max: 45,
+            scale: 1,
+            speed: 450,
+          }}
+          className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[500px] flex flex-col justify-between"
+        >
+          <div>
+            <div className="relative w-full h-[230px]">
+              <img
+                src={image}
+                alt="project_image"
+                className="w-full h-full object-cover rounded-2xl"
+              />
+              <div className="absolute inset-0 flex gap-1 justify-end m-3 card-img_hover">
+                {source_code_link && (
+                  <div
+                    onClick={() => window.open(source_code_link, "_blank")}
+                    className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                  >
+                    <img
+                      src={github}
+                      alt="source code"
+                      className="w-1/2 h-1/2 object-contain"
+                    />
+                  </div>
+                )}
+                {website_link && (
+                  <div
+                    onClick={() => window.open(website_link, "_blank")}
+                    className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                  >
+                    <img
+                      src={browser}
+                      alt="live demo"
+                      className="w-1/2 h-1/2 object-contain"
+                    />
+                  </div>
+                )}
+                {additional_images && additional_images.length > 0 && (
+                  <div
+                    onClick={openModal}
+                    className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                  >
+                    <img
+                      src={imagesIcon}
+                      alt="images"
+                      className="w-1/2 h-1/2 object-contain"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="mt-5 flex-grow">
+              <h3 className="text-white font-bold text-[24px]">{name}</h3>
+              <p className="mt-2 text-secondary text-[14px]">{description}</p>
+            </div>
           </div>
-        )}
-        {website_link && (
-          <div
-            onClick={() => window.open(website_link, "_blank")}
-            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-          >
-            <img
-              src={browser}
-              alt="live demo"
-              className="w-1/2 h-1/2 object-contain"
-            />
+
+          <div className="mt-4 flex flex-wrap gap-2 min-h-[24px]">
+            {tags && tags.length > 0 ? (
+              tags.map((tag) => (
+                <p
+                  key={`${name}-${tag.name}`}
+                  className={`text-[14px] ${tag.color}`}
+                >
+                  {tag.name}
+                </p>
+              ))
+            ) : (
+              <p className="text-[14px] text-transparent">#Placeholder</p>
+            )}
           </div>
-        )}
-        {additional_images && additional_images.length > 0 && (
-          <div
-            onClick={openModal}
-            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-          >
-            <img
-              src={imagesIcon}
-              alt="images"
-              className="w-1/2 h-1/2 object-contain"
-            />
-          </div>
-        )}
-      </div>
-    </div>
-
-    <div className="mt-5 flex-grow">
-      <h3 className="text-white font-bold text-[24px]">{name}</h3>
-      <p className="mt-2 text-secondary text-[14px]">{description}</p>
-    </div>
-  </div>
-
-  <div className="mt-4 flex flex-wrap gap-2 min-h-[24px]">
-  {tags && tags.length > 0 ? (
-    tags.map((tag) => (
-      <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
-        {tag.name}
-      </p>
-    ))
-  ) : (
-    <p className="text-[14px] text-transparent">#Placeholder</p>
-  )}
-</div>
-
-</Tilt>
-
+        </Tilt>
       </motion.div>
 
       {/* Modal for displaying additional images */}
       {isModalOpen && (
-        <Modal  onClose={closeModal} additional_images={additional_images} />
+        <Modal onClose={closeModal} additional_images={additional_images} />
       )}
     </>
   );
