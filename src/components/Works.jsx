@@ -26,7 +26,7 @@ const Modal = ({ onClose, additional_images }) => {
           &times;
         </button>
         <div className="mt-5">
-          <Swiper
+          {/* <Swiper
             modules={[Navigation, Pagination]}
             navigation
             pagination={{ clickable: true }}
@@ -43,7 +43,7 @@ const Modal = ({ onClose, additional_images }) => {
                 />
               </SwiperSlide>
             ))}
-          </Swiper>
+          </Swiper> */}
         </div>
       </div>
     </div>
@@ -103,7 +103,7 @@ const ProjectCard = ({
                     />
                   </div>
                 )}
-                {additional_images && additional_images.length > 0 && (
+                {/* {additional_images && additional_images.length > 0 && (
                   <div
                     onClick={openModal}
                     className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
@@ -114,7 +114,7 @@ const ProjectCard = ({
                       className="w-1/2 h-1/2 object-contain"
                     />
                   </div>
-                )}
+                )} */}
               </div>
             </div>
 
@@ -141,9 +141,9 @@ const ProjectCard = ({
       </motion.div>
 
       {/* Modal for displaying additional images */}
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <Modal onClose={closeModal} additional_images={additional_images} />
-      )}
+      )} */}
     </>
   );
 };
